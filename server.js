@@ -54,6 +54,37 @@ fs.readFile("./public/benny.jpg", function(err, data) {
   console.log("benny.jpg read successfully");
 });
 
+function handleRequests(req, res) {
+  console.log("request recieved");
+
+  switch(req.url) {
+      case "/":
+      case "/style.css":
+        res.writeHead(200, {'Content-Type': 'text/css'});
+        res.write(page_style_css);
+        break;
+      
+      case "/index.html":
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(page_index_html);
+        break;
+
+      case "/index.js":
+          res.writeHead(200, {'Content-Type': 'application/javascript'});
+          res.write(page_index_js);
+          break;
+
+      case "/benny.jpg":
+          res.writeHead(200, {'Content-Type': 'image/jpg'});
+          res.write(image_benny);
+          break;
+
+      default:
+          res.writeHead(404, {'Content-Type': 'text/html'});
+          res.write(page_404_html);
+  }
+}
+
 server.listen(3000, function(err) {
   if (err) {
     throw err; 
