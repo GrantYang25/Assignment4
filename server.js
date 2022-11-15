@@ -48,3 +48,10 @@ fs.readFile("./public/benny.jpg", function(err, data) {
   image_benny = data;
   console.log("benny.jpg read successfully");
 });
+
+server.listen(3000, function(err) {
+  if (err) {
+    throw err; 
+  }
+  console.log("on port 3000");
+});
