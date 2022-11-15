@@ -6,9 +6,14 @@
  */
 var http = require('http');
 var fs = require('fs');
-var server = http.createServer(requestHandler);
-var page_index_html, page_index_js, page_404_html, page_style_css, image_benny = null;
+var server = http.createServer(handleRequests);
+var page_index_js = null;
+var page_index_html = null;
+var page_404_html = null; 
+var page_style_css = null;
+var image_benny = null;
 
+//store/read files
 fs.readFile("./public/index.html", "utf-8", function(err, data) {
   if (err) {
     throw err; 
