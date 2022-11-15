@@ -1,6 +1,6 @@
 /*
  * Write your server code in this file.
  *
- * name:
- * email:
+ * name: Grant Yang
+ * email: Yanggra@oregonstate.edu
  */
