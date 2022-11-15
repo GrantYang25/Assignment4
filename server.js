@@ -58,5 +58,5 @@ server.listen(3000, function(err) {
   if (err) {
     throw err; 
   }
-  console.log("on port 3000");
+  console.log("Server on port 3000");
 });
